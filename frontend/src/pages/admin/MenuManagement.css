@@ -1,0 +1,437 @@
+/* ============================================
+   NEO-BRUTALIST MENU MANAGEMENT
+   Bold borders, stark colors, chunky shadows
+   ============================================ */
+
+.menu-management {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 1.5rem;
+  border: 4px solid #000;
+  box-shadow: 6px 6px 0 #FFD93D;
+}
+
+.page-header h2 {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #000;
+  font-family: 'Space Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.page-subtitle {
+  margin: 0.25rem 0 0;
+  color: #666;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.add-btn {
+  gap: 0.5rem;
+  background: #FFD93D !important;
+  color: #000 !important;
+  border: 3px solid #000 !important;
+  border-radius: 0 !important;
+  box-shadow: 4px 4px 0 #000 !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.1s ease !important;
+}
+
+.add-btn:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 #000 !important;
+}
+
+.add-btn:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0 0 0 #000 !important;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  color: #666;
+  background: #fff;
+  border: 4px solid #000;
+  box-shadow: 6px 6px 0 #FFD93D;
+  font-family: 'Space Mono', monospace;
+}
+
+.menu-categories {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.category-section {
+  background: #fff;
+  border-radius: 0;
+  padding: 1.5rem;
+  border: 4px solid #000;
+  box-shadow: 6px 6px 0 #000;
+}
+
+.category-section:nth-child(odd) {
+  box-shadow: 6px 6px 0 #FF6B6B;
+}
+
+.category-section:nth-child(even) {
+  box-shadow: 6px 6px 0 #4ECDC4;
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 4px solid #000;
+  background: #E8E8E8;
+  padding: 0.75rem 1rem;
+  margin: -1.5rem -1.5rem 1.5rem;
+}
+
+.category-title {
+  margin: 0;
+  color: #000;
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-family: 'Space Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.category-header [class*="badge"] {
+  background: #FFD93D !important;
+  color: #000 !important;
+  border: 2px solid #000 !important;
+  border-radius: 0 !important;
+  font-weight: 700 !important;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.menu-item-card {
+  border: 3px solid #000 !important;
+  border-radius: 0 !important;
+  overflow: hidden;
+  transition: all 0.15s ease;
+  background: #fff !important;
+  box-shadow: 4px 4px 0 #000 !important;
+}
+
+.menu-item-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 #000 !important;
+}
+
+.menu-item-card.unavailable {
+  opacity: 0.7;
+  background: #E8E8E8 !important;
+}
+
+.menu-item-card .item-image {
+  height: 180px;
+  background: #E8E8E8;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 3px solid #000;
+}
+
+.menu-item-card .item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.menu-item-card:hover .item-image img {
+  transform: scale(1.05);
+}
+
+.menu-item-card .no-image {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  background: repeating-linear-gradient(
+    45deg,
+    #E8E8E8,
+    #E8E8E8 10px,
+    #D0D0D0 10px,
+    #D0D0D0 20px
+  );
+}
+
+.unavailable-badge {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: #FF6B6B;
+  color: #000;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border: 2px solid #000;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.category-badge {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 0.75rem;
+  text-transform: capitalize;
+  background: #FFD93D !important;
+  color: #000 !important;
+  border: 2px solid #000 !important;
+  border-radius: 0 !important;
+  font-weight: 700 !important;
+}
+
+.item-info {
+  padding: 1rem;
+  background: #fff;
+}
+
+.item-info h4 {
+  margin: 0 0 0.5rem;
+  color: #000;
+  font-size: 1.125rem;
+  font-weight: 700;
+  font-family: 'Space Mono', monospace;
+}
+
+.item-info .description {
+  color: #666;
+  font-size: 0.875rem;
+  margin: 0 0 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.item-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.75rem;
+  border-top: 2px dashed #000;
+}
+
+.price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #000;
+  font-family: 'Space Mono', monospace;
+  background: #A8E6CF;
+  padding: 0.25rem 0.75rem;
+  border: 2px solid #000;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.edit-btn {
+  color: #000 !important;
+  background: #4ECDC4 !important;
+  border: 2px solid #000 !important;
+  border-radius: 0 !important;
+  box-shadow: 2px 2px 0 #000 !important;
+  transition: all 0.1s ease !important;
+}
+
+.edit-btn:hover {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 #000 !important;
+  background: #3DBDB5 !important;
+}
+
+.delete-btn {
+  color: #000 !important;
+  background: #FF6B6B !important;
+  border: 2px solid #000 !important;
+  border-radius: 0 !important;
+  box-shadow: 2px 2px 0 #000 !important;
+  transition: all 0.1s ease !important;
+}
+
+.delete-btn:hover {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 #000 !important;
+  background: #FF5252 !important;
+}
+
+/* Modal Form - Neo-Brutalist */
+.form-select {
+  flex: 1;
+  height: 44px;
+  padding: 0.5rem 0.75rem;
+  border: 3px solid #000;
+  border-radius: 0;
+  background: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all 0.1s ease;
+  box-shadow: 3px 3px 0 #000;
+}
+
+.form-select:focus {
+  outline: none;
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 #000;
+}
+
+.checkbox {
+  width: 1.25rem;
+  height: 1.25rem;
+  accent-color: #FFD93D;
+  border: 2px solid #000;
+}
+
+/* Dialog/Modal Neo-Brutalist Override */
+.menu-management [role="dialog"] {
+  border: 4px solid #000 !important;
+  border-radius: 0 !important;
+  box-shadow: 8px 8px 0 #000 !important;
+  background: #fff !important;
+}
+
+.menu-management [role="dialog"] h2 {
+  font-family: 'Space Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #000;
+  background: #FFD93D;
+  padding: 0.5rem 1rem;
+  margin: -1.5rem -1.5rem 1rem;
+  border-bottom: 4px solid #000;
+}
+
+.menu-management [role="dialog"] label {
+  font-weight: 700;
+  color: #000;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+}
+
+.menu-management [role="dialog"] input {
+  border: 3px solid #000 !important;
+  border-radius: 0 !important;
+  box-shadow: 3px 3px 0 #000 !important;
+  transition: all 0.1s ease !important;
+}
+
+.menu-management [role="dialog"] input:focus {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 #000 !important;
+}
+
+.menu-management [role="dialog"] button[type="submit"] {
+  background: #FFD93D !important;
+  color: #000 !important;
+  border: 3px solid #000 !important;
+  border-radius: 0 !important;
+  box-shadow: 4px 4px 0 #000 !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  transition: all 0.1s ease !important;
+}
+
+.menu-management [role="dialog"] button[type="submit"]:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 #000 !important;
+}
+
+.menu-management [role="dialog"] button[type="button"] {
+  background: #E8E8E8 !important;
+  color: #000 !important;
+  border: 3px solid #000 !important;
+  border-radius: 0 !important;
+  box-shadow: 4px 4px 0 #000 !important;
+  font-weight: 700 !important;
+  text-transform: uppercase;
+  transition: all 0.1s ease !important;
+}
+
+.menu-management [role="dialog"] button[type="button"]:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 #000 !important;
+}
+
+/* Animations */
+@keyframes brutalist-scale-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-scale-in {
+  animation: brutalist-scale-in 0.2s ease forwards;
+}
+
+.animate-fade-in {
+  animation: brutalist-scale-in 0.2s ease forwards;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .page-header .add-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .category-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .menu-item-card {
+    box-shadow: 3px 3px 0 #000 !important;
+  }
+  
+  .menu-item-card:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0 #000 !important;
+  }
+}

@@ -1,0 +1,811 @@
+/* ============================================
+   BRUTALIST HOME PAGE STYLES
+   High-contrast | Bold Typography | Raw Grid
+   ============================================ */
+
+/* CSS Reset for Brutalist Aesthetic */
+.brutalist-home {
+  --brutalist-black: #000000;
+  --brutalist-white: #ffffff;
+  --brutalist-accent: #ff3e00;
+  --brutalist-yellow: #ffe500;
+  --brutalist-gray: #f0f0f0;
+  --brutalist-dark-gray: #1a1a1a;
+  --brutalist-border: 4px solid #000000;
+  --brutalist-border-thin: 2px solid #000000;
+  
+  min-height: 100vh;
+  background: var(--brutalist-white);
+  font-family: 'Courier New', Courier, monospace;
+  overflow-x: hidden;
+}
+
+/* Container */
+.brutalist-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.brutalist-hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: var(--brutalist-border);
+  position: relative;
+}
+
+.brutalist-hero-content {
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: var(--brutalist-border);
+  background: var(--brutalist-white);
+}
+
+.brutalist-hero-title {
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  margin: 0 0 2rem 0;
+  text-transform: uppercase;
+  color: var(--brutalist-black);
+}
+
+.brutalist-hero-title span {
+  display: block;
+  background: var(--brutalist-black);
+  color: var(--brutalist-white);
+  padding: 0.5rem 1rem;
+  width: fit-content;
+  margin-top: 0.5rem;
+}
+
+.brutalist-hero-subtitle {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--brutalist-dark-gray);
+  margin-bottom: 3rem;
+  max-width: 500px;
+  border-left: var(--brutalist-border);
+  padding-left: 1.5rem;
+}
+
+.brutalist-hero-actions {
+  display: flex;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+.brutalist-btn {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 1.25rem 2.5rem;
+  border: var(--brutalist-border);
+  cursor: pointer;
+  transition: none;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brutalist-btn-primary {
+  background: var(--brutalist-black);
+  color: var(--brutalist-white);
+}
+
+.brutalist-btn-primary:hover {
+  background: var(--brutalist-accent);
+  border-color: var(--brutalist-accent);
+}
+
+.brutalist-btn-secondary {
+  background: var(--brutalist-white);
+  color: var(--brutalist-black);
+}
+
+.brutalist-btn-secondary:hover {
+  background: var(--brutalist-yellow);
+}
+
+.brutalist-hero-visual {
+  background: var(--brutalist-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.brutalist-hero-visual::before {
+  content: '';
+  position: absolute;
+  inset: 2rem;
+  border: 2px dashed var(--brutalist-white);
+  opacity: 0.3;
+}
+
+.brutalist-hero-label {
+  color: var(--brutalist-white);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.brutalist-hero-badge {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: var(--brutalist-yellow);
+  color: var(--brutalist-black);
+  padding: 1rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: var(--brutalist-border);
+  transform: rotate(3deg);
+}
+
+/* ============================================
+   SECTION HEADER
+   ============================================ */
+.brutalist-section-header {
+  background: var(--brutalist-black);
+  color: var(--brutalist-white);
+  padding: 2rem 4rem;
+  border-bottom: var(--brutalist-border);
+}
+
+.brutalist-section-header h2 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.brutalist-section-header p {
+  font-size: 1rem;
+  color: var(--brutalist-gray);
+  margin: 1rem 0 0 0;
+  max-width: 600px;
+}
+
+/* ============================================
+   FEATURES GRID
+   ============================================ */
+.brutalist-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-bottom: var(--brutalist-border);
+}
+
+.brutalist-feature {
+  padding: 3rem;
+  border-right: var(--brutalist-border);
+  background: var(--brutalist-white);
+  transition: background 0s;
+}
+
+.brutalist-feature:last-child {
+  border-right: none;
+}
+
+.brutalist-feature:hover {
+  background: var(--brutalist-gray);
+}
+
+.brutalist-feature-number {
+  font-size: 4rem;
+  font-weight: 900;
+  color: var(--brutalist-black);
+  line-height: 1;
+  margin-bottom: 1.5rem;
+  opacity: 0.2;
+}
+
+.brutalist-feature h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 1rem 0;
+  color: var(--brutalist-black);
+}
+
+.brutalist-feature p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--brutalist-dark-gray);
+  margin: 0;
+}
+
+/* ============================================
+   SYSTEM OVERVIEW SECTION
+   ============================================ */
+.brutalist-system {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: var(--brutalist-border);
+}
+
+.brutalist-system-info {
+  padding: 4rem;
+  border-right: var(--brutalist-border);
+}
+
+.brutalist-system-title {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--brutalist-accent);
+  margin-bottom: 1rem;
+}
+
+.brutalist-system h3 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  margin: 0 0 2rem 0;
+  color: var(--brutalist-black);
+}
+
+.brutalist-system-description {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--brutalist-dark-gray);
+  margin-bottom: 2rem;
+}
+
+.brutalist-system-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.brutalist-system-list li {
+  padding: 1rem 0;
+  border-top: var(--brutalist-border-thin);
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brutalist-system-list li::before {
+  content: '→';
+  font-size: 1.25rem;
+}
+
+.brutalist-system-visual {
+  background: var(--brutalist-gray);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.brutalist-stat {
+  padding: 2rem;
+  border: var(--brutalist-border-thin);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.brutalist-stat-number {
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--brutalist-black);
+  line-height: 1;
+}
+
+.brutalist-stat-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--brutalist-dark-gray);
+  margin-top: 0.5rem;
+}
+
+/* ============================================
+   INTERFACE SECTION
+   ============================================ */
+.brutalist-interface {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-bottom: var(--brutalist-border);
+}
+
+.brutalist-interface-item {
+  padding: 2.5rem;
+  border-right: var(--brutalist-border-thin);
+  background: var(--brutalist-white);
+}
+
+.brutalist-interface-item:last-child {
+  border-right: none;
+}
+
+.brutalist-interface-item:hover {
+  background: var(--brutalist-yellow);
+}
+
+.brutalist-interface-icon {
+  width: 60px;
+  height: 60px;
+  border: var(--brutalist-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  background: var(--brutalist-white);
+}
+
+.brutalist-interface-item h4 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 0.75rem 0;
+  color: var(--brutalist-black);
+}
+
+.brutalist-interface-item p {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--brutalist-dark-gray);
+  margin: 0;
+}
+
+/* ============================================
+   BENEFITS SECTION
+   ============================================ */
+.brutalist-benefits {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  border-bottom: var(--brutalist-border);
+}
+
+.brutalist-benefits-header {
+  padding: 4rem;
+  border-right: var(--brutalist-border);
+  background: var(--brutalist-accent);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.brutalist-benefits-header h3 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: var(--brutalist-white);
+}
+
+.brutalist-benefits-header p {
+  font-size: 1rem;
+  color: var(--brutalist-white);
+  opacity: 0.9;
+  margin-top: 1rem;
+}
+
+.brutalist-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.brutalist-benefit {
+  padding: 2.5rem;
+  border-right: var(--brutalist-border-thin);
+  border-bottom: var(--brutalist-border-thin);
+  background: var(--brutalist-white);
+}
+
+.brutalist-benefit:nth-child(2n) {
+  border-right: none;
+}
+
+.brutalist-benefit:nth-last-child(-n+2) {
+  border-bottom: none;
+}
+
+.brutalist-benefit:hover {
+  background: var(--brutalist-gray);
+}
+
+.brutalist-benefit h4 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 1rem 0;
+  color: var(--brutalist-black);
+}
+
+.brutalist-benefit p {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--brutalist-dark-gray);
+  margin: 0;
+}
+
+/* ============================================
+   CTA SECTION
+   ============================================ */
+.brutalist-cta {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  border-bottom: var(--brutalist-border);
+}
+
+.brutalist-cta-content {
+  padding: 5rem 4rem;
+  background: var(--brutalist-white);
+}
+
+.brutalist-cta-content h3 {
+  font-size: 3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  margin: 0 0 1.5rem 0;
+  color: var(--brutalist-black);
+  line-height: 1.1;
+}
+
+.brutalist-cta-content p {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--brutalist-dark-gray);
+  margin-bottom: 2rem;
+  max-width: 500px;
+}
+
+.brutalist-cta-actions {
+  display: flex;
+  gap: 0;
+}
+
+.brutalist-cta-visual {
+  background: var(--brutalist-yellow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.brutalist-cta-visual::before {
+  content: '→';
+  font-size: 8rem;
+  font-weight: 900;
+  color: var(--brutalist-black);
+}
+
+/* ============================================
+   CONTACT SECTION
+   ============================================ */
+.brutalist-contact {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-bottom: var(--brutalist-border);
+}
+
+.brutalist-contact-item {
+  padding: 3rem;
+  border-right: var(--brutalist-border-thin);
+  background: var(--brutalist-white);
+  text-align: center;
+}
+
+.brutalist-contact-item:last-child {
+  border-right: none;
+}
+
+.brutalist-contact-item:hover {
+  background: var(--brutalist-gray);
+}
+
+.brutalist-contact-icon {
+  width: 50px;
+  height: 50px;
+  border: var(--brutalist-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  background: var(--brutalist-white);
+}
+
+.brutalist-contact-item h4 {
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin: 0 0 0.5rem 0;
+  color: var(--brutalist-black);
+}
+
+.brutalist-contact-item p {
+  font-size: 1rem;
+  color: var(--brutalist-dark-gray);
+  margin: 0;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.brutalist-footer {
+  background: var(--brutalist-black);
+  color: var(--brutalist-white);
+  padding: 2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brutalist-footer p {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+
+.brutalist-footer-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.brutalist-footer-links a {
+  color: var(--brutalist-white);
+  text-decoration: none;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-bottom: 2px solid transparent;
+}
+
+.brutalist-footer-links a:hover {
+  border-bottom-color: var(--brutalist-yellow);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 1200px) {
+  .brutalist-hero {
+    grid-template-columns: 1fr;
+  }
+  
+  .brutalist-hero-content {
+    border-right: none;
+    border-bottom: var(--brutalist-border);
+  }
+  
+  .brutalist-hero-visual {
+    min-height: 300px;
+  }
+  
+  .brutalist-features {
+    grid-template-columns: 1fr;
+  }
+  
+  .brutalist-feature {
+    border-right: none;
+    border-bottom: var(--brutalist-border);
+  }
+  
+  .brutalist-feature:last-child {
+    border-bottom: none;
+  }
+  
+  .brutalist-system {
+    grid-template-columns: 1fr;
+  }
+  
+  .brutalist-system-info {
+    border-right: none;
+    border-bottom: var(--brutalist-border);
+  }
+  
+  .brutalist-interface {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .brutalist-interface-item:nth-child(2n) {
+    border-right: none;
+  }
+  
+  .brutalist-interface-item:nth-child(n+3) {
+    border-top: var(--brutalist-border-thin);
+  }
+  
+  .brutalist-benefits {
+    grid-template-columns: 1fr;
+  }
+  
+  .brutalist-benefits-header {
+    border-right: none;
+    border-bottom: var(--brutalist-border);
+  }
+  
+  .brutalist-cta {
+    grid-template-columns: 1fr;
+  }
+  
+  .brutalist-cta-content {
+    border-right: none;
+  }
+  
+  .brutalist-cta-visual {
+    min-height: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .brutalist-hero-content {
+    padding: 3rem 2rem;
+  }
+  
+  .brutalist-hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .brutalist-hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .brutalist-hero-actions {
+    flex-direction: column;
+  }
+  
+  .brutalist-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .brutalist-section-header {
+    padding: 2rem;
+  }
+  
+  .brutalist-feature {
+    padding: 2rem;
+  }
+  
+  .brutalist-system-info {
+    padding: 2rem;
+  }
+  
+  .brutalist-system h3 {
+    font-size: 1.75rem;
+  }
+  
+  .brutalist-system-visual {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  
+  .brutalist-interface {
+    grid-template-columns: 1fr;
+  }
+  
+  .brutalist-interface-item {
+    border-right: none;
+    border-bottom: var(--brutalist-border-thin);
+  }
+  
+  .brutalist-interface-item:last-child {
+    border-bottom: none;
+  }
+  
+  .brutalist-benefits-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .brutalist-benefit {
+    border-right: none;
+  }
+  
+  .brutalist-benefit:nth-last-child(-n+2) {
+    border-bottom: var(--brutalist-border-thin);
+  }
+  
+  .brutalist-benefit:last-child {
+    border-bottom: none;
+  }
+  
+  .brutalist-cta-content {
+    padding: 3rem 2rem;
+  }
+  
+  .brutalist-cta-content h3 {
+    font-size: 2rem;
+  }
+  
+  .brutalist-cta-actions {
+    flex-direction: column;
+  }
+  
+  .brutalist-contact {
+    grid-template-columns: 1fr;
+  }
+  
+  .brutalist-contact-item {
+    border-right: none;
+    border-bottom: var(--brutalist-border-thin);
+  }
+  
+  .brutalist-contact-item:last-child {
+    border-bottom: none;
+  }
+  
+  .brutalist-footer {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .brutalist-footer-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .brutalist-hero-title {
+    font-size: 2rem;
+  }
+  
+  .brutalist-hero-badge {
+    position: static;
+    transform: none;
+    margin: 2rem;
+    text-align: center;
+  }
+  
+  .brutalist-hero-visual {
+    flex-direction: column;
+    padding: 2rem;
+  }
+  
+  .brutalist-hero-label {
+    writing-mode: horizontal-tb;
+    position: static;
+    transform: none;
+    margin-top: 1rem;
+  }
+  
+  .brutalist-stat-number {
+    font-size: 2rem;
+  }
+  
+  .brutalist-cta-visual::before {
+    font-size: 4rem;
+  }
+}

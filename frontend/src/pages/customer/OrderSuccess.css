@@ -1,0 +1,201 @@
+/* Order Success Page Styles */
+.order-success {
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.order-success.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: hsl(var(--muted-foreground));
+}
+
+/* Success Header */
+.success-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.success-icon {
+  color: hsl(142, 71%, 45%);
+  margin-bottom: 1rem;
+}
+
+.success-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+  color: hsl(var(--foreground));
+}
+
+.success-header p {
+  color: hsl(var(--muted-foreground));
+  margin: 0;
+}
+
+/* Cards */
+.order-success .card {
+  border: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 1rem;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+}
+
+.detail-label {
+  color: hsl(var(--muted-foreground));
+}
+
+.detail-value {
+  font-weight: 600;
+  color: hsl(var(--foreground));
+}
+
+.detail-value.total {
+  font-size: 1.25rem;
+  color: hsl(var(--primary));
+}
+
+/* Status Card */
+.status-card .card-content {
+  padding-top: 0;
+}
+
+.status-current {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.status-badge {
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+}
+
+.status-message {
+  margin-top: 1rem;
+  color: hsl(var(--muted-foreground));
+}
+
+/* Timeline */
+.status-timeline {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.status-timeline::before {
+  content: '';
+  position: absolute;
+  top: 16px;
+  left: 20px;
+  right: 20px;
+  height: 2px;
+  background: hsl(var(--border));
+}
+
+.timeline-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.step-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: hsl(var(--muted));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: hsl(var(--muted-foreground));
+  transition: all 0.3s ease;
+}
+
+.timeline-step.active .step-circle {
+  background: hsl(var(--primary));
+  color: white;
+}
+
+.timeline-step.completed .step-circle {
+  background: hsl(142, 71%, 45%);
+  color: white;
+}
+
+.timeline-step span {
+  font-size: 0.75rem;
+  color: hsl(var(--muted-foreground));
+}
+
+.timeline-step.active span {
+  color: hsl(var(--foreground));
+  font-weight: 500;
+}
+
+/* Items Card */
+.ordered-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.ordered-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: hsl(var(--muted) / 0.5);
+  border-radius: 0.5rem;
+}
+
+.ordered-item .item-details {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ordered-item .item-qty {
+  font-weight: 600;
+  color: hsl(var(--primary));
+}
+
+.ordered-item .item-name {
+  color: hsl(var(--foreground));
+}
+
+.ordered-item .item-price {
+  font-weight: 600;
+}
+
+/* Action Buttons */
+.action-buttons {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .success-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .status-timeline span {
+    font-size: 0.65rem;
+  }
+  
+  .step-circle {
+    width: 28px;
+    height: 28px;
+  }
+}

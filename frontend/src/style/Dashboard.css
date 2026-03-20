@@ -1,0 +1,17 @@
+.main{
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    margin-top: 20%;
+    font-size: xx-large;
+    color: #000000;
+}
+.logout-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: medium;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
